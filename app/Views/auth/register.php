@@ -239,7 +239,7 @@ $(document).ready(function(){
       cropModal.hide();
     });
   });
-});
+
 </script>
 </body>
 </html>

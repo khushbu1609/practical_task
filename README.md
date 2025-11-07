@@ -70,3 +70,34 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 =======
 # practical_task
 This is practical task for symphony solution in codeigniter 4.
+
+
+# 🚀 CodeIgniter 4 Project
+
+A modern PHP web application built using the [CodeIgniter 4](https://codeigniter.com/) framework.  
+This README provides detailed steps to set up, install, and run the project locally.
+
+---
+
+## 📋 Prerequisites
+
+Before starting, ensure you have the following installed on your system:
+
+| Requirement | Recommended Version |
+|--------------|----------------------|
+| PHP | 8.1 or later |
+| Composer | 2.x |
+| MySQL / MariaDB | 10.x+ |
+| Apache / Nginx | Latest |
+| Git | Optional (for version control) |
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/khushbu1609/practical_task.git
+login page is http://localhost/practical_task/public/login
+

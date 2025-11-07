@@ -23,7 +23,7 @@
         <img src="<?= $user['signature'] ?>" alt="User Signature" style="border: 1px solid #000; max-width: 400px; height: auto;">
 </p>
       <?php endif; ?>
-      <a href="<?= base_url('admin/users') ?>" class="btn btn-secondary mt-3">Back</a>
+      <a href="<?= base_url('backend/admin/users') ?>" class="btn btn-secondary mt-3">Back</a>
     </div>
   </div>
 </div>
