@@ -101,4 +101,5 @@ Before starting, ensure you have the following installed on your system:
 git clone https://github.com/khushbu1609/practical_task.git
 login page is http://localhost/practical_task/public/login
 Database is in Mysql : practical_task/practical_task.sql
+Login credential : khushbumehta16@gmail.com / 1234567
 
