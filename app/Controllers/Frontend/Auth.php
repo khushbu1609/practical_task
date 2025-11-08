@@ -37,7 +37,8 @@ class Auth extends BaseController
         'profile_picture' => $profileName,
         'signature'  => $this->request->getPost('signature')
     ];
- 
+ log_message('debug', 'Hashed password: ' . password_hash($this->request->getPost('password'), PASSWORD_DEFAULT));
+
     $userModel->save($data);
     return redirect()->to('/login')->with('success', 'Registration successful!');
 }
@@ -57,15 +58,18 @@ class Auth extends BaseController
 
         $user = $userModel->where('email', $email)->first();
 
-        if ($user && password_verify($password, $user['password'])) {
+        if ($user && password_verify(trim($password), trim($user['password']))) {
             session()->set(['user' => $user]);
-            return redirect()->to('/dashboard');
+            return redirect()->to('dashboard');
         } else {
             return redirect()->back()->with('error', 'Invalid credentials');
         }
     }
     public function dashboard(){
-        echo 'Hello';die;
+         if (!session()->has('user')) {
+            return redirect()->to('/login')->with('error', 'Please log in first.');
+        }
+        return view('auth/dashboard');
     }
 
     public function forgotPassword()
@@ -75,7 +79,7 @@ class Auth extends BaseController
 
     public function sendResetLink()
     {
-            $email = $this->request->getPost('email');
+    $email = $this->request->getPost('email');
     $userModel = new \App\Models\UserModel();
     $user = $userModel->where('email', $email)->first();
 
@@ -83,8 +87,10 @@ class Auth extends BaseController
         return redirect()->back()->with('error', 'No account found with that email.');
     }
 
+    
     // Generate a token
     $token = bin2hex(random_bytes(16));
+    // print_r($user['id']);die;
     $userModel->update($user['id'], ['reset_token' => $token]);
 
     // In real app: Send email with reset link

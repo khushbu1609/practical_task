@@ -10,6 +10,7 @@ $routes->get('/', 'Frontend\Home::index');
 // $routes->get('/', 'Auth::login');
 $routes->get('register', 'Frontend\Auth::register');
 $routes->post('register', 'Frontend\Auth::registerUser');
+$routes->get('dashboard', 'Frontend\Auth::dashboard');
 $routes->get('login', 'Frontend\Auth::login');
 $routes->post('login', 'Frontend\Auth::loginUser');
 $routes->get('forgot-password', 'Frontend\Auth::forgotPassword');
